@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_04_215354) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_04_221810) do
   create_table "sectors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
@@ -56,7 +56,26 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_04_215354) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "date_time"
+    t.integer "sector_id", null: false
+    t.integer "status"
+    t.integer "unit_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "visitor_id", null: false
+    t.index ["sector_id"], name: "index_visits_on_sector_id"
+    t.index ["unit_id"], name: "index_visits_on_unit_id"
+    t.index ["user_id"], name: "index_visits_on_user_id"
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
+  end
+
   add_foreign_key "sectors", "units"
   add_foreign_key "users", "sectors"
   add_foreign_key "users", "units"
+  add_foreign_key "visits", "sectors"
+  add_foreign_key "visits", "units"
+  add_foreign_key "visits", "users"
+  add_foreign_key "visits", "visitors"
 end

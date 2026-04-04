@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visitor: one
+  unit: one
+  sector: one
+  user: one
+  status: 1
+  date_time: 2026-04-04 19:18:10
+
+two:
+  visitor: two
+  unit: two
+  sector: two
+  user: two
+  status: 1
+  date_time: 2026-04-04 19:18:10
