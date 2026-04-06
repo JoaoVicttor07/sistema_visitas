@@ -67,3 +67,4 @@ end
 
 gem "devise"
 gem "carrierwave", "~> 3.0"
+gem "pg"
