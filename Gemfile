@@ -68,3 +68,4 @@ end
 gem "devise"
 gem "carrierwave", "~> 3.0"
 gem "pg"
+gem "dotenv-rails", groups: [ :development, :test ]
