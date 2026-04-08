@@ -17,7 +17,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_04_221810) do
   create_table "sectors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
-    t.integer "unit_id", null: false
+    t.bigint "unit_id", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_sectors_on_unit_id"
   end
@@ -40,8 +40,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_04_221810) do
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
     t.string "role"
-    t.integer "sector_id", null: false
-    t.integer "unit_id", null: false
+    t.bigint "sector_id", null: false
+    t.bigint "unit_id", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -62,12 +62,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_04_221810) do
   create_table "visits", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "date_time"
-    t.integer "sector_id", null: false
+    t.bigint "sector_id", null: false
     t.integer "status"
-    t.integer "unit_id", null: false
+    t.bigint "unit_id", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "visitor_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "visitor_id", null: false
     t.index ["sector_id"], name: "index_visits_on_sector_id"
     t.index ["unit_id"], name: "index_visits_on_unit_id"
     t.index ["user_id"], name: "index_visits_on_user_id"
